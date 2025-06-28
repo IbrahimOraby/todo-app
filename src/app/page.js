@@ -52,7 +52,7 @@ export default async function Home() {
 					</div>
 					<button
 						type="submit"
-						className="btn border-1 rounded-full px-4 py-2 hover:bg-gray-100 hover:cursor-pointer"
+						className="btn border-1 rounded-full px-4 py-2 bg-emerald-400 hover:bg-emerald-600 hover:cursor-pointer"
 					>
 						Submit
 					</button>
