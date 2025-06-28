@@ -19,14 +19,14 @@ const userSchema = new mongoose.Schema({
 	}
 });
 
-// userSchema.pre("save", async function (next) {
-// 	const hashedPassword = await bc.hash(this.password, 6);
-// 	console.log({ hashedPassword });
+userSchema.pre("save", async function (next) {
+	const hashedPassword = await bc.hash(this.password, 6);
+	console.log({ hashedPassword });
 
-// 	this.password = hashedPassword;
+	this.password = hashedPassword;
 
-// 	next();
-// });
+	next();
+});
 
 // Model
 

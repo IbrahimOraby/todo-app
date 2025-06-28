@@ -4,11 +4,6 @@ import { connectDB, disconnectDB } from "./db/dbConnection";
 import { revalidatePath } from "next/cache";
 import { createToDo, deleteToDo } from "@/server/actions/todoActions";
 
-// const todoSchema = z.object({
-// 	taskName: z.string().min(3).max(20),
-// 	description: z.string().optional()
-// });
-
 export default async function Home() {
 	async function getToDos() {
 		await connectDB();
@@ -63,7 +58,10 @@ export default async function Home() {
 				<h3 className="mb-4 text-2xl font-bold leading-none">To Do List</h3>
 				<ul className=" py-1 list-disc">
 					{tasks.map((task, index) => (
-						<li key={index} className="flex gap-4 justify-between mb-2 pb-1 border-slate-200 border-b-1">
+						<li
+							key={index}
+							className="flex gap-4 justify-between mb-2 pb-1 border-slate-200 border-b-1"
+						>
 							<span className="">{task.taskName}</span>
 							<form action={deleteToDo}>
 								<input type="hidden" name="id" value={task.id} />
